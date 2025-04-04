@@ -19,10 +19,13 @@ class PlayerController extends Controller
     }
     
     public function index()
-    {
-        $players = Player::with(['team', 'position'])->paginate(15);
-        return view('players.index', compact('players'));
-    }
+{
+    $players = Player::with(['team', 'position'])->paginate(15);
+    $positions = Position::orderBy('name')->pluck('name', 'id');
+    $teams = Team::orderBy('name')->pluck('name', 'id');
+    
+    return view('players.index', compact('players', 'positions', 'teams'));
+}
 
     public function create()
     {
@@ -132,20 +135,28 @@ class PlayerController extends Controller
     }
 
     public function compare(Request $request)
-    {
-        $playerIds = $request->input('players', []);
-        
-        if (count($playerIds) < 2) {
-            return redirect()->route('players.index')
-                ->with('error', 'Please select at least 2 players to compare.');
-        }
-        
-        $players = Player::with(['team', 'position', 'stats'])->findOrFail($playerIds);
-        
-        $seasons = $players->flatMap(function ($player) {
-            return $player->stats->pluck('season');
-        })->unique()->sort()->values()->all();
-        
-        return view('players.compare', compact('players', 'seasons'));
+{
+    $playerIds = $request->input('players', []);
+    
+    if (count($playerIds) < 2) {
+        return redirect()->route('players.index')
+            ->with('error', 'Please select at least 2 players to compare.');
     }
+    
+    $players = Player::with(['team', 'position', 'stats'])->findOrFail($playerIds);
+    
+    $seasons = $players->flatMap(function ($player) {
+        return $player->stats->pluck('season');
+    })->unique()->sort()->values()->all();
+    
+    // Define colors for the chart
+    $colors = [
+        'rgba(255, 99, 132, 0.7)',
+        'rgba(54, 162, 235, 0.7)',
+        'rgba(255, 206, 86, 0.7)',
+        'rgba(75, 192, 192, 0.7)'
+    ];
+    
+    return view('players.compare', compact('players', 'seasons', 'colors'));
+}
 }

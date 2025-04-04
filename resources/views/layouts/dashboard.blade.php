@@ -23,7 +23,7 @@
                 <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                     <div class="position-sticky pt-3">
                         <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none" href="{{ route('home') }}">
-                            <img src="{{ asset('images/logo.png') }}" alt="Football Scout Pro Logo" height="30" class="me-2">
+                            <img src="{{ asset('images/logo.jpg') }}" alt="Football Scout Pro Logo" height="30" class="me-2">
                             <span class="fs-4">Football Scout Pro</span>
                         </a>
                         <hr>

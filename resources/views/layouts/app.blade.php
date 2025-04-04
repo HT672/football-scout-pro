@@ -9,11 +9,26 @@
 
     <!-- Fonts -->
     <!-- Bootstrap CSS from CDN -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- Bootstrap Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-<!-- Bootstrap JS from CDN -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+    /* Fix for pagination SVG paths appearing without container */
+    svg {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.125em;
+    }
+    
+    /* Hide any SVG paths that might be rendered outside SVG elements */
+    body > path {
+        display: none !important;
+    }
+</style>
+
+    
 
     
 </head>
@@ -22,7 +37,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ asset('images/logo.png') }}" alt="Football Scout Pro Logo" height="30" class="me-2">
+                    <img src="{{ asset('images/logo.jpg') }}" alt="Football Scout Pro Logo" height="30" class="me-2">
                     {{ config('app.name', 'Football Scout Pro') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -147,7 +162,104 @@
             </div>
         </footer>
 
-        <!-- AJAX Scripts -->
+         <!-- JavaScript Libraries -->
+        <!-- jQuery first, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Custom Scripts -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('DOM fully loaded');
+                
+                // Handle Select All functionality
+                const selectAll = document.getElementById('selectAll');
+                const playerCheckboxes = document.querySelectorAll('.player-checkbox');
+                const compareBtn = document.getElementById('compareBtn');
+                
+                console.log('Select All element found:', selectAll !== null);
+                console.log('Player checkboxes found:', playerCheckboxes.length);
+                console.log('Compare button found:', compareBtn !== null);
+                
+                if (selectAll) {
+                    selectAll.addEventListener('change', function() {
+                        playerCheckboxes.forEach(checkbox => {
+                            checkbox.checked = selectAll.checked;
+                        });
+                        updateCompareButton();
+                    });
+                }
+                
+                if (playerCheckboxes.length > 0) {
+                    playerCheckboxes.forEach(checkbox => {
+                        checkbox.addEventListener('change', function() {
+                            updateCompareButton();
+                            
+                            // Update "Select All" checkbox
+                            if (selectAll) {
+                                const allChecked = Array.from(playerCheckboxes).every(c => c.checked);
+                                const someChecked = Array.from(playerCheckboxes).some(c => c.checked);
+                                
+                                selectAll.checked = allChecked;
+                                selectAll.indeterminate = someChecked && !allChecked;
+                            }
+                        });
+                    });
+                }
+                
+                // Handle position and team filters
+                const positionSelect = document.getElementById('position');
+                const teamSelect = document.getElementById('team');
+                
+                console.log('Position select found:', positionSelect !== null);
+                console.log('Team select found:', teamSelect !== null);
+                
+                if (positionSelect) {
+                    positionSelect.addEventListener('change', function() {
+                        console.log('Position changed to:', positionSelect.value);
+                        // Find the closest form to this select element
+                        const form = positionSelect.closest('form');
+                        if (form) {
+                            console.log('Found form, submitting');
+                            form.submit();
+                        } else {
+                            console.error('No parent form found for position select');
+                        }
+                    });
+                }
+                
+                if (teamSelect) {
+                    teamSelect.addEventListener('change', function() {
+                        console.log('Team changed to:', teamSelect.value);
+                        // Find the closest form to this select element
+                        const form = teamSelect.closest('form');
+                        if (form) {
+                            console.log('Found form, submitting');
+                            form.submit();
+                        } else {
+                            console.error('No parent form found for team select');
+                        }
+                    });
+                }
+                
+                function updateCompareButton() {
+                    if (!compareBtn) return;
+                    
+                    const checkedCount = Array.from(playerCheckboxes).filter(c => c.checked).length;
+                    console.log('Checked players count:', checkedCount);
+                    
+                    compareBtn.disabled = checkedCount < 2;
+                    
+                    if (checkedCount >= 2) {
+                        compareBtn.innerHTML = `<i class="bi bi-bar-chart-fill"></i> Compare (${checkedCount})`;
+                    } else {
+                        compareBtn.innerHTML = `<i class="bi bi-bar-chart-fill"></i> Compare Selected`;
+                    }
+                }
+            });
+        </script>
+
+        <!-- Additional AJAX Scripts -->
         @yield('scripts')
     </div>
 </body>

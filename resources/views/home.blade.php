@@ -14,7 +14,7 @@
                 <a href="{{ route('players.index') }}" class="btn btn-light btn-lg mt-3">Explore Players</a>
             </div>
             <div class="col-md-4 text-center">
-                <img src="{{ asset('images/hero-image.png') }}" alt="Football Scout" class="img-fluid rounded">
+                <img src="{{ asset('images/logo.jpg') }}" alt="Football Scout" class="img-fluid rounded">
             </div>
         </div>
     </div>
