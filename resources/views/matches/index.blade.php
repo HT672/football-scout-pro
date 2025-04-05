@@ -3,6 +3,10 @@
 @section('title', 'Fixtures & Results')
 
 @section('content')
+
+<!-- Link to the FixtureStyle CSS file -->
+<link rel="stylesheet" href="{{ asset('css/FixtureStyle.css') }}">
+
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>Fixtures & Results</h1>
@@ -17,12 +21,12 @@
 
     <ul class="nav nav-tabs mb-4" id="matchTabs" role="tablist">
         <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="upcoming-tab" data-bs-toggle="tab" data-bs-target="#upcoming" type="button" role="tab" aria-controls="upcoming" aria-selected="true">
+            <button class="nav-link active btn-hover-azure" id="upcoming-tab" data-bs-toggle="tab" data-bs-target="#upcoming" type="button" role="tab" aria-controls="upcoming" aria-selected="true">
                 Upcoming Matches
             </button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="recent-tab" data-bs-toggle="tab" data-bs-target="#recent" type="button" role="tab" aria-controls="recent" aria-selected="false">
+            <button class="nav-link btn-hover-azure" id="recent-tab" data-bs-toggle="tab" data-bs-target="#recent" type="button" role="tab" aria-controls="recent" aria-selected="false">
                 Recent Results
             </button>
         </li>
@@ -77,15 +81,15 @@
                                     </div>
                                 </div>
                                 <div class="text-center mt-3">
-                                    <a href="{{ route('matches.show', $match) }}" class="btn btn-outline-primary btn-sm">
+                                    <a href="{{ route('matches.show', $match) }}" class="btn btn-outline-primary btn-sm btn-hover-azure">
                                         <i class="bi bi-info-circle"></i> Match Details
                                     </a>
                                     @auth
                                         @if(auth()->user()->isScout())
-                                            <a href="{{ route('matches.edit', $match) }}" class="btn btn-outline-secondary btn-sm">
+                                            <a href="{{ route('matches.edit', $match) }}" class="btn btn-outline-secondary btn-sm btn-hover-azure">
                                                 <i class="bi bi-pencil"></i> Edit
                                             </a>
-                                            <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteMatchModal{{ $match->id }}">
+                                            <button type="button" class="btn btn-outline-danger btn-sm btn-hover-azure" data-bs-toggle="modal" data-bs-target="#deleteMatchModal{{ $match->id }}">
                                                 <i class="bi bi-trash"></i> Delete
                                             </button>
                                         @endif
@@ -182,15 +186,15 @@
                                     </div>
                                 </div>
                                 <div class="text-center mt-3">
-                                    <a href="{{ route('matches.show', $match) }}" class="btn btn-outline-primary btn-sm">
+                                    <a href="{{ route('matches.show', $match) }}" class="btn btn-outline-primary btn-sm btn-hover-azure">
                                         <i class="bi bi-info-circle"></i> Match Details
                                     </a>
                                     @auth
                                         @if(auth()->user()->isScout())
-                                            <a href="{{ route('matches.edit', $match) }}" class="btn btn-outline-secondary btn-sm">
+                                            <a href="{{ route('matches.edit', $match) }}" class="btn btn-outline-secondary btn-sm btn-hover-azure">
                                                 <i class="bi bi-pencil"></i> Edit
                                             </a>
-                                            <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteMatchModal{{ $match->id }}">
+                                            <button type="button" class="btn btn-outline-danger btn-sm btn-hover-azure" data-bs-toggle="modal" data-bs-target="#deleteMatchModal{{ $match->id }}">
                                                 <i class="bi bi-trash"></i> Delete
                                             </button>
                                         @endif

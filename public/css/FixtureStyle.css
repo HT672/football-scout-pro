@@ -1,0 +1,29 @@
+body {
+    background: linear-gradient(to top, #ffffff, rgb(192, 157, 244)); 
+}
+
+.container h1{
+    color: white;
+}
+
+/* Hover effect */
+.btn-hover-azure:hover {
+    background-color: rgb(152, 213, 249);
+    color: white;
+    background: linear-gradient(to left, #007bff, #6f42c1); /* Gradient effect on hover */
+    border: none; /* Remove border on hover */
+}
+
+/* Base button state */
+.btn-hover-azure {
+    transition: background 0.3s ease, color 0.3s ease;
+    border: 5px solid white; /* White border by default */
+}
+
+/* Active state - make it look the same as the hover */
+.nav-tabs .nav-link.active {
+    background-color: rgb(152, 213, 249); /* Background on active state */
+    color: white; /* Text color */
+    background: linear-gradient(to left, #007bff, #6f42c1); /* Same gradient as hover */
+    border: none; /* Remove border from active state */
+}

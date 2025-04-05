@@ -3,18 +3,22 @@
 @section('title', 'Home')
 
 @section('content')
+
+<!-- Link to the CSS file -->
+<link rel="stylesheet" href="{{ asset('css/HomeStyle.css') }}">
+
 <div class="container">
     <!-- Hero Banner -->
-    <div class="bg-primary text-white p-5 mb-4 rounded">
+    <div class="bg-primary text-white p-5 mb-4 rounded" style="background: linear-gradient(to top, #007bff, #6f42c1);">
         <div class="row align-items-center">
             <div class="col-md-8">
-                <h1 class="display-4">Football Scout Pro</h1>
+                <h1 class="display-4">The Football Scout</h1>
                 <p class="lead">Track player performance metrics, compare talents, and discover the next football stars.</p>
                 <p>A comprehensive platform for football scouts, coaches, and enthusiasts to analyze player statistics.</p>
-                <a href="{{ route('players.index') }}" class="btn btn-light btn-lg mt-3">Explore Players</a>
+                <a href="{{ route('players.index') }}" class="btn btn-light btn-lg mt-3 btn-hover-azure2">Explore Players</a>
             </div>
             <div class="col-md-4 text-center">
-                <img src="{{ asset('images/logo.jpg') }}" alt="Football Scout" class="img-fluid rounded">
+                <img src="{{ asset('images/FGLOGO.png') }}" alt="Football Scout" class="img-fluid rounded">
             </div>
         </div>
     </div>
@@ -51,7 +55,7 @@
                                                 <p class="card-text">
                                                     <span class="badge bg-success">{{ $player->stats->where('season', '2024-2025')->sum('goals') }} Goals</span>
                                                 </p>
-                                                <a href="{{ route('players.show', $player) }}" class="btn btn-sm btn-outline-primary">View Profile</a>
+                                                <a href="{{ route('players.show', $player) }}" class="btn btn-sm btn-outline-primary btn-hover-azure">View Profile</a>
                                             </div>
                                         </div>
                                     </div>
@@ -65,7 +69,7 @@
                     </div>
                 </div>
                 <div class="card-footer text-end">
-                    <a href="{{ route('stats.index') }}" class="btn btn-primary">View All Stats</a>
+                    <a href="{{ route('stats.index') }}" class="btn btn-primary btn-hover-azure2">View All Stats</a>
                 </div>
             </div>
         </div>
@@ -97,7 +101,7 @@
                     </div>
                 </div>
                 <div class="card-footer text-end">
-                    <a href="{{ route('matches.index') }}" class="btn btn-primary">View All Fixtures</a>
+                    <a href="{{ route('matches.index') }}" class="btn btn-primary btn-hover-azure2">View All Fixtures</a>
                 </div>
             </div>
         </div>
@@ -126,7 +130,7 @@
                     </div>
                 </div>
                 <div class="card-footer text-end">
-                    <a href="{{ route('matches.index') }}" class="btn btn-primary">View All Results</a>
+                    <a href="{{ route('matches.index') }}" class="btn btn-primary btn-hover-azure2">View All Results</a>
                 </div>
             </div>
         </div>
@@ -168,7 +172,7 @@
                     </div>
                 </div>
                 <div class="card-footer text-end">
-                    <a href="{{ route('teams.index') }}" class="btn btn-primary">View All Teams</a>
+                    <a href="{{ route('teams.index') }}" class="btn btn-primary btn-hover-azure2">View All Teams</a>
                 </div>
             </div>
         </div>

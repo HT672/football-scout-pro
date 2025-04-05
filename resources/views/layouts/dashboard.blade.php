@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Football Scout Pro') }} - Dashboard</title>
+    <title>{{ config('app.name', 'FootGoal') }} - Dashboard</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/FGLOGO.png') }}">
+
+    <!-- Link to the DashStyle CSS file -->
+<link rel="stylesheet" href="{{ asset('css/DashStyle.css') }}">
 
     <!-- Bootstrap CSS from CDN -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,46 +27,46 @@
                 <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                     <div class="position-sticky pt-3">
                         <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none" href="{{ route('home') }}">
-                            <img src="{{ asset('images/logo.jpg') }}" alt="Football Scout Pro Logo" height="30" class="me-2">
-                            <span class="fs-4">Football Scout Pro</span>
+                            <img src="{{ asset('images/FGLOGO.png') }}" alt="Football Scout Pro Logo" height="30" class="me-2">
+                            <span class="fs-4">FootGoal</span>
                         </a>
                         <hr>
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
-                                    <i class="bi bi-speedometer2"></i> Dashboard
+                                <a class="nav-link btn-hover-azure {{ Request::is('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
+                                    <i class="bi bi-speedometer2 "></i> Dashboard
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('players*') ? 'active' : '' }}" href="{{ route('players.index') }}">
+                                <a class="nav-link btn-hover-azure{{ Request::is('players*') ? 'active' : '' }}" href="{{ route('players.index') }}">
                                     <i class="bi bi-person"></i> Players
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('teams*') ? 'active' : '' }}" href="{{ route('teams.index') }}">
+                                <a class="nav-link btn-hover-azure{{ Request::is('teams*') ? 'active' : '' }}" href="{{ route('teams.index') }}">
                                     <i class="bi bi-people"></i> Teams
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('matches*') ? 'active' : '' }}" href="{{ route('matches.index') }}">
+                                <a class="nav-link btn-hover-azure{{ Request::is('matches*') ? 'active' : '' }}" href="{{ route('matches.index') }}">
                                     <i class="bi bi-calendar-event"></i> Fixtures
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('stats*') ? 'active' : '' }}" href="{{ route('stats.index') }}">
+                                <a class="nav-link btn-hover-azure{{ Request::is('stats*') ? 'active' : '' }}" href="{{ route('stats.index') }}">
                                     <i class="bi bi-graph-up"></i> Stats
                                 </a>
                             </li>
                             <hr>
                             @if(auth()->user()->isAdmin())
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link btn-hover-azure" href="#" >
                                         <i class="bi bi-gear"></i> Settings
                                     </a>
                                 </li>
                             @endif
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('logout') }}" 
+                                <a class="nav-link btn-hover-azure" href="{{ route('logout') }}" 
                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i class="bi bi-box-arrow-right"></i> {{ __('Logout') }}
                                 </a>

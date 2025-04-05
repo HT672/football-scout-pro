@@ -1,0 +1,13 @@
+.btn-hover-azure:hover {
+    background-color: rgb(152, 213, 249);
+    border: 1px solid white;
+    border-radius: 200px;
+    color: White;  
+   /* background: linear-gradient(to bottom, #007bff, #6f42c1);*/
+    
+}
+
+.btn-hover-azure {
+    transition: background 0.3s ease, color 0.3s ease;
+
+}

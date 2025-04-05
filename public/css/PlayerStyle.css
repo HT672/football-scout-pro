@@ -1,0 +1,37 @@
+body {
+    background: linear-gradient(to top, #ffffff, rgb(192, 157, 244)); 
+}
+
+.container h1{
+    color: white;
+
+}
+
+.form-label{
+    background: linear-gradient(to left, #007bff, #6f42c1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* For Firefox */
+    color: transparent;
+}
+
+.btn-hover-azure:hover {
+    background-color: rgb(152, 213, 249);
+    border: none;
+    color: White;  
+    background: linear-gradient(to left, #007bff, #6f42c1);
+    
+}
+.btn-hover-azure {
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #007bff, #6f42c1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* Firefox support */
+    color: transparent;
+    display: inline-block;
+}
+

@@ -7,11 +7,17 @@
 
     <title>{{ config('app.name', 'Football Scout Pro') }} - @yield('title', 'Player Performance Tracker')</title>
 
+    <link rel="icon" type="image/png" href="{{ asset('images/FGLOGO.png') }}">
+
+
     <!-- Fonts -->
     <!-- Bootstrap CSS from CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Link to the LayoutStyle CSS file -->
+<link rel="stylesheet" href="{{ asset('css/LayoutStyle.css') }}">
 
     <style>
     /* Fix for pagination SVG paths appearing without container */
@@ -37,8 +43,8 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ asset('images/logo.jpg') }}" alt="Football Scout Pro Logo" height="30" class="me-2">
-                    {{ config('app.name', 'Football Scout Pro') }}
+                    <img src="{{ asset('images/FGLOGO.png') }}" alt="Football Scout Pro Logo" height="70px" width="70px" class="me-2">
+                    {{ config('', '') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -132,7 +138,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <h5>Football Scout Pro</h5>
+                        <h5>FootGoal</h5>
                         <p>The ultimate player performance tracking platform for football scouts, coaches, and enthusiasts.</p>
                     </div>
                     <div class="col-md-4">
@@ -147,17 +153,17 @@
                     <div class="col-md-4">
                         <h5>Contact</h5>
                         <address>
-                            <strong>Football Scout Pro</strong><br>
-                            123 Stadium Avenue<br>
-                            Sportsville, SP 12345<br>
-                            <i class="bi bi-envelope"></i> info@footballscoutpro.com<br>
-                            <i class="bi bi-telephone"></i> +1 (123) 456-7890
+                            <strong>The Pro Football Scout</strong><br>
+                            RHU Campus<br>
+                            Saida - Mechref<br>
+                            <i class="bi bi-envelope"></i> info@footgoal.com<br>
+                            <i class="bi bi-telephone"></i> 79 301 334 - 76 907 653
                         </address>
                     </div>
                 </div>
                 <hr>
                 <div class="text-center">
-                    <p>&copy; {{ date('Y') }} Football Scout Pro. All rights reserved.</p>
+                    <p>&copy; {{ date('Y') }} FootGoal. All rights reserved.</p>
                 </div>
             </div>
         </footer>

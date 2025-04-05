@@ -1,0 +1,18 @@
+body {
+    background: linear-gradient(to top, #ffffff, rgb(192, 157, 244)); 
+}
+
+.btn-hover-azure:hover {
+    background-color: rgb(152, 213, 249);
+    border: none;
+    color: White;  
+    background: linear-gradient(to left, #007bff, #6f42c1);
+    
+}
+.btn-hover-azure {
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container h1{
+    color: white;
+}

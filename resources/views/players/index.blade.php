@@ -3,6 +3,10 @@
 @section('title', 'Players')
 
 @section('content')
+
+ <!-- Link to the LayoutStyle CSS file -->
+ <link rel="stylesheet" href="{{ asset('css/PlayerStyle.css') }}">
+
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>Players</h1>
@@ -45,7 +49,7 @@
                     </select>
                 </div>
                 <div class="col-md-2 d-flex align-items-end">
-                    <button type="submit" class="btn btn-primary w-100">
+                    <button type="submit" class="btn btn-primary w-100 btn-hover-azure">
                         <i class="bi bi-search"></i> Search
                     </button>
                 </div>
@@ -65,8 +69,8 @@
             
             @if(count($players) > 1)
                 <form action="{{ route('players.compare') }}" method="GET" id="compareForm">
-                    <button type="submit" class="btn btn-sm btn-outline-primary" id="compareBtn" disabled>
-                        <i class="bi bi-bar-chart-fill"></i> Compare Selected
+                    <button type="submit" class="btn btn-sm btn-outline-primary btn-hover-azure" id="compareBtn" disabled>
+                        <i class="bi bi-bar-chart-fill"></i> Select Players
                     </button>
                 </form>
             @endif
@@ -108,7 +112,7 @@
                                         @endif
                                         <div>
                                             <a href="{{ route('players.show', $player) }}" class="text-decoration-none">
-                                                <strong>{{ $player->full_name }}</strong>
+                                                <strong class="gradient-text">{{ $player->full_name }}</strong>
                                             </a>
                                             @if($player->jersey_number)
                                                 <span class="badge bg-dark ms-1">#{{ $player->jersey_number }}</span>

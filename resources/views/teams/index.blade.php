@@ -3,6 +3,10 @@
 @section('title', 'Teams')
 
 @section('content')
+
+<!-- Link to the TeamStyle CSS file -->
+<link rel="stylesheet" href="{{ asset('css/TeamStyle.css') }}">
+
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>Teams</h1>
@@ -37,16 +41,16 @@
                         </div>
                         
                         <div class="d-flex justify-content-between mt-3">
-                            <a href="{{ route('teams.show', $team) }}" class="btn btn-outline-primary btn-sm">
+                            <a href="{{ route('teams.show', $team) }}" class="btn btn-outline-primary btn-sm btn-hover-azure">
                                 <i class="bi bi-eye"></i> View Team
                             </a>
                             @auth
                                 @if(auth()->user()->isScout())
                                     <div class="btn-group" role="group">
-                                        <a href="{{ route('teams.edit', $team) }}" class="btn btn-outline-secondary btn-sm">
+                                        <a href="{{ route('teams.edit', $team) }}" class="btn btn-outline-secondary btn-sm btn-hover-azure">
                                             <i class="bi bi-pencil"></i> Edit
                                         </a>
-                                        <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteTeamModal{{ $team->id }}">
+                                        <button type="button" class="btn btn-outline-danger btn-sm btn-hover-azure" data-bs-toggle="modal" data-bs-target="#deleteTeamModal{{ $team->id }}">
                                             <i class="bi bi-trash"></i>
                                         </button>
                                     </div>

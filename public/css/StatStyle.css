@@ -1,0 +1,7 @@
+body {
+    background: linear-gradient(to top, #ffffff, rgb(192, 157, 244)); 
+}
+
+.container h1{
+    color: white;
+}

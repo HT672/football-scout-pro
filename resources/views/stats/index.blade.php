@@ -3,6 +3,10 @@
 @section('title', 'Statistics')
 
 @section('content')
+
+<!-- Link to the StatStyle CSS file -->
+<link rel="stylesheet" href="{{ asset('css/StatStyle.css') }}">
+
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>Player Statistics</h1>
