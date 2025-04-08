@@ -3,12 +3,16 @@
 @section('title', $team->name)
 
 @section('content')
+
+<!-- Link to the TeamStyle CSS file -->
+<link rel="stylesheet" href="{{ asset('css/TeamStyle.css') }}">
+
 <div class="container">
     <div class="mb-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('teams.index') }}">Teams</a></li>
+                <li class="breadcrumb-item crumbss"><a href="{{ route('home') }}">Home</a></li>
+                <li class="breadcrumb-item crumbss"><a href="{{ route('teams.index') }}">Teams</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{ $team->name }}</li>
             </ol>
         </nav>
@@ -33,7 +37,7 @@
                     @auth
                         @if(auth()->user()->isScout())
                             <div class="btn-group w-100 mb-3">
-                                <a href="{{ route('teams.edit', $team) }}" class="btn btn-outline-primary">
+                                <a href="{{ route('teams.edit', $team) }}" class="btn btn-outline-primary btn-hover-azure">
                                     <i class="bi bi-pencil"></i> Edit
                                 </a>
                                 <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteTeamModal">
@@ -111,7 +115,7 @@
                                 <h5 class="card-title mb-0">Squad List</h5>
                                 @auth
                                     @if(auth()->user()->isScout())
-                                        <a href="{{ route('players.create', ['team_id' => $team->id]) }}" class="btn btn-primary btn-sm">
+                                        <a href="{{ route('players.create', ['team_id' => $team->id]) }}" class="btn btn-primary btn-sm btn-hover-azure">
                                             <i class="bi bi-plus-circle"></i> Add Player
                                         </a>
                                     @endif
@@ -193,7 +197,7 @@
                                                                                 <span class="text-muted">No stats</span>
                                                                             @endif
                                                                         </div>
-                                                                        <a href="{{ route('players.show', $player) }}" class="btn btn-sm btn-outline-primary">
+                                                                        <a href="{{ route('players.show', $player) }}" class="btn btn-sm btn-outline-primary btn-hover-azure">
                                                                             View
                                                                         </a>
                                                                     </div>
@@ -272,7 +276,7 @@
                             </div>
                             
                             <div class="text-end mt-3">
-                                <a href="{{ route('matches.index') }}" class="btn btn-outline-primary">
+                                <a href="{{ route('matches.index') }}" class="btn btn-outline-primary btn-hover-azure">
                                     View All Fixtures
                                 </a>
                             </div>

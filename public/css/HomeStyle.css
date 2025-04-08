@@ -26,3 +26,20 @@ body {
     
 }
 
+/* Gradient hover for team cards */
+.card.team-hover {
+    transition: background 0.4s ease, color 0.4s ease, transform 0.3s ease;
+}
+
+.card.team-hover:hover {
+    background: linear-gradient(to right, #007bff, #6f42c1); /* Same as navbar */
+    color: white !important;
+    transform: translateY(-4px); /* Optional lift on hover */
+}
+
+.card.team-hover:hover .card-title,
+.card.team-hover:hover .card-text,
+.card.team-hover:hover small,
+.card.team-hover:hover i {
+    color: white !important;
+}

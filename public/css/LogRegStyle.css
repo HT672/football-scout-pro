@@ -1,0 +1,137 @@
+/* Body background gradient */
+body {
+    background: linear-gradient(to top, #ffffff, rgb(192, 157, 244)); 
+}
+
+/* Card and form styling */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background-color: white;
+}
+
+/* Header of the card */
+.card-header {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #6f42c1;
+}
+
+/* Form styling */
+.form-control {
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+/* Input focus effect */
+.form-control:focus {
+    border-color: #6f42c1;
+    box-shadow: 0 0 5px rgba(111, 66, 193, 0.5);
+}
+
+/* Styling for error messages */
+.invalid-feedback {
+    color: #e74c3c;
+    font-size: 14px;
+}
+
+/* Checkbox styling */
+.form-check-label {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Remember me label spacing */
+.form-check {
+    margin-left: 10px;
+}
+
+/* Button styling */
+.btn-hover-azure {
+    transition: background 0.3s ease, color 0.3s ease;
+    background-color: #6f42c1;
+    border-radius: 8px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    border: none;
+}
+
+/* Button hover effect */
+.btn-hover-azure:hover {
+    background-color: rgb(152, 213, 249);
+    border: none;
+    color: White;  
+    background: linear-gradient(to left, #007bff, #6f42c1);
+}
+
+/* Align buttons and links */
+.btn-link {
+    color: #6f42c1;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+/* Center the form */
+.container {
+    margin-top: 50px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .col-md-8 {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
+
+/* Style the checkbox container */
+.form-check-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* When the checkbox is checked */
+.form-check-input:checked {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+}
+
+/* Creating the purple checkmark */
+.form-check-input:checked::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    width: 6px;
+    height: 10px;
+    border-left: 3px solid white;
+    border-bottom: 3px solid white;
+    transform: rotate(45deg);
+}
+
+/* Checkbox focus effect */
+.form-check-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(111, 66, 193, 0.5);
+}

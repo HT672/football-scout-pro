@@ -3,12 +3,16 @@
 @section('title', 'Compare Players')
 
 @section('content')
+
+ <!-- Link to the LayoutStyle CSS file -->
+ <link rel="stylesheet" href="{{ asset('css/PlayerStyle.css') }}">
+
 <div class="container">
     <div class="mb-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('players.index') }}">Players</a></li>
+                <li class="breadcrumb-item crumbss"><a href="{{ route('home') }}">Home</a></li>
+                <li class="breadcrumb-item crumbss"><a href="{{ route('players.index') }}">Players</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Compare Players</li>
             </ol>
         </nav>
@@ -237,7 +241,7 @@
             @endif
         </div>
         <div class="card-footer text-end">
-            <a href="{{ route('players.index') }}" class="btn btn-primary">Back to Players List</a>
+            <a href="{{ route('players.index') }}" class="btn btn-primary btn-hover-azure">Back to Players List</a>
         </div>
     </div>
 </div>

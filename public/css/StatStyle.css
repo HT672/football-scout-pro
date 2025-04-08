@@ -5,3 +5,15 @@ body {
 .container h1{
     color: white;
 }
+
+.btn-hover-azure {
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-hover-azure {
+    background-color: rgb(152, 213, 249);
+    border: none;
+    color: White;  
+    background: linear-gradient(to left, #007bff, #6f42c1);
+    
+}

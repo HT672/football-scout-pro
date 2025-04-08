@@ -148,7 +148,7 @@
                         @foreach($teams->take(8) as $team)
                             <div class="col">
                                 <a href="{{ route('teams.show', $team) }}" class="text-decoration-none">
-                                    <div class="card h-100 text-center">
+                                    <div class="card h-100 text-center team-hover">
                                         <div class="p-3">
                                             @if($team->logo)
                                                 <img src="{{ asset('storage/' . $team->logo) }}" class="img-fluid" style="max-height: 100px;" alt="{{ $team->name }}">

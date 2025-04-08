@@ -1,22 +1,24 @@
 /* General Navbar Styling */
-.navbar-nav .nav-item .nav-link {
-    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition */
+/*.navbar-nav .nav-item .nav-link {
+    transition: background 0.3s ease, color 0.3s ease; 
 }
+*/
 
 /* Hover Effect with Gradient */
-.navbar-nav .nav-item .nav-link:hover {
-    background: linear-gradient(to right, #007bff, #6f42c1); /* Blue to purple gradient */
-    color: white; /* Change text color to white */
-    border-radius: 100px; /* Optional: make the background have rounded corners */
+/*.navbar-nav .nav-item .nav-link:hover {
+    background: linear-gradient(to right, #007bff, #6f42c1); 
+    color: white; 
+    border-radius: 100px; 
 }
+*/
 
 /* Active Navbar Item with Gradient */
-.navbar-nav .nav-item .nav-link.active {
-    background: linear-gradient(to right, #007bff, #6f42c1); /* Blue to purple gradient */
-    color: white; /* Text color for active state */
-    border-radius: 100px; /* Optional: rounded corners for active items */
+/* .navbar-nav .nav-item .nav-link.active {
+    background: linear-gradient(to right, #007bff, #6f42c1);
+    color: white; 
+    border-radius: 100px; 
 }
-
+*/
 /* Optional: Navbar background gradient */
 .navbar {
     background: white;
@@ -26,15 +28,44 @@
     padding: 0.5rem 1rem; /* Makes the clickable area more comfortable */
 }
 
-.navbar-nav .nav-item .nav-link:hover,
+/*.navbar-nav .nav-item .nav-link:hover,
 .navbar-nav .nav-item .nav-link.active {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
 }
 
 @media (max-width: 768px) {
     .navbar-nav .nav-item {
         margin-bottom: 0.5rem;
     }
+}
+*/
+
+.nav-links-container {
+    position: relative;
+}
+
+.nav-slider {
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    background: linear-gradient(to right, #007bff, #6f42c1);
+    border-radius: 100px;
+    transition: all 0.4s ease;
+    z-index: 0;
+}
+
+.navbar-nav .nav-link {
+    color: #000; /* Default color */
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link.active {
+    color: transparent; /* Make the text transparent */
+    text-shadow: 
+        0 0 1px #007bff, 
+        0 0 1px #007bff,
+        0 0 1px #6f42c1,
+        0 0 1px #6f42c1;
 }
 
 footer .list-unstyled li a {
@@ -67,3 +98,4 @@ footer h5 {
     background-clip: text; /* For Firefox */
     color: transparent;
 }
+

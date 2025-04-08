@@ -52,12 +52,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                    <ul class="navbar-nav me-auto nav-links-container position-relative">
                         <li class="nav-item">
                             <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ route('home') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::is('players*') ? 'active' : '' }}" href="{{ route('players.index') }}">Players</a>
+                            <a class="nav-link  {{ Request::is('players*') ? 'active' : '' }}" href="{{ route('players.index') }}">Players</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ Request::is('teams*') ? 'active' : '' }}" href="{{ route('teams.index') }}">Teams</a>
@@ -168,10 +168,15 @@
             </div>
         </footer>
 
-         <!-- JavaScript Libraries -->
+        <!-- JavaScript Libraries -->
         <!-- jQuery first, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+        <!---Navbar Script-->
+        <script src="{{ asset('js/NavbarScript.js') }}"></script>
+
 
         <!-- Custom Scripts -->
         <script>

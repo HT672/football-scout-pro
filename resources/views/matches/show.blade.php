@@ -3,6 +3,10 @@
 @section('title', $match->homeTeam->name . ' vs ' . $match->awayTeam->name)
 
 @section('content')
+
+<!-- Link to the FixtureStyle CSS file -->
+<link rel="stylesheet" href="{{ asset('css/FixtureStyle.css') }}">
+
 <div class="container">
     <div class="mb-4">
         <nav aria-label="breadcrumb">

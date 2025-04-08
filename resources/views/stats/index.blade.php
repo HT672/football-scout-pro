@@ -25,7 +25,7 @@
             <div class="d-flex justify-content-center">
                 <div class="btn-group" role="group" aria-label="Season selector">
                     @foreach($seasons as $season)
-                        <a href="{{ route('stats.index', ['season' => $season]) }}" class="btn btn-outline-primary {{ $currentSeason == $season ? 'active' : '' }}">
+                        <a href="{{ route('stats.index', ['season' => $season]) }}" class="btn btn-outline-primary btn-hover-azure {{ $currentSeason == $season ? 'active' : '' }}">
                             {{ $season }}
                         </a>
                     @endforeach

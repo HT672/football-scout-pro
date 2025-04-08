@@ -16,3 +16,13 @@ body {
 .container h1{
     color: white;
 }
+
+.crumbss a{
+    text-decoration: none;
+    color: linear-gradient(to right, #007bff, #6f42c1);
+
+}
+.crumbss a:hover{
+    border: none;
+    color: White;  
+}

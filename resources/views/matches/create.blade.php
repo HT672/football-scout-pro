@@ -3,12 +3,16 @@
 @section('title', 'Schedule New Match')
 
 @section('content')
+
+<!-- Link to the FixtureStyle CSS file -->
+<link rel="stylesheet" href="{{ asset('css/FixtureStyle.css') }}"> 
+
 <div class="container">
     <div class="mb-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('matches.index') }}">Matches</a></li>
+                <li class="breadcrumb-item crumbss"><a href="{{ route('home') }}">Home</a></li>
+                <li class="breadcrumb-item crumbss"><a href="{{ route('matches.index') }}">Matches</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Schedule New Match</li>
             </ol>
         </nav>

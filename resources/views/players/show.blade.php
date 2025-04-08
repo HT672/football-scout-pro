@@ -3,12 +3,16 @@
 @section('title', $player->full_name)
 
 @section('content')
+
+<!-- Link to the LayoutStyle CSS file -->
+<link rel="stylesheet" href="{{ asset('css/PlayerStyle.css') }}">
+
 <div class="container">
     <div class="mb-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('players.index') }}">Players</a></li>
+                <li class="breadcrumb-item crumbss"><a href="{{ route('home') }}">Home</a></li>
+                <li class="breadcrumb-item crumbss"><a href="{{ route('players.index') }}">Players</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{ $player->full_name }}</li>
             </ol>
         </nav>
@@ -49,7 +53,7 @@
                     @auth
                         @if(auth()->user()->isScout())
                             <div class="btn-group w-100 mb-3">
-                                <a href="{{ route('players.edit', $player) }}" class="btn btn-outline-primary">
+                                <a href="{{ route('players.edit', $player) }}" class="btn btn-outline-primary btn-hover-azure">
                                     <i class="bi bi-pencil"></i> Edit
                                 </a>
                                 <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deletePlayerModal">
@@ -184,7 +188,7 @@
                                 @auth
                                     @if(auth()->user()->isScout())
                                         <div class="text-end">
-                                            <a href="{{ route('stats.create', ['player_id' => $player->id]) }}" class="btn btn-primary btn-sm">
+                                            <a href="{{ route('stats.create', ['player_id' => $player->id]) }}" class="btn btn-primary btn-sm btn-hover-azure">
                                                 <i class="bi bi-plus-circle"></i> Add Stats
                                             </a>
                                         </div>
@@ -242,11 +246,14 @@
                                     @endforeach
                                 </div>
                                 
+                                <!--------- DANGER ZONE NOT WORKING -------->
                                 <div class="text-end mt-3">
-                                    <a href="{{ route('stats.show', $player->id) }}" class="btn btn-outline-primary btn-sm">
+                                    <a href="{{ route('stats.show', $player->id) }}" class="btn btn-outline-primary btn-sm btn-hover-azure">
                                         View Full Match History
                                     </a>
                                 </div>
+                                <!------------------------------------------>
+
                             @endif
                         </div>
                     </div>
@@ -270,7 +277,7 @@
                         Are you sure you want to delete <strong>{{ $player->full_name }}</strong>? This action cannot be undone.
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-secondary btn-hover-azure" data-bs-dismiss="modal">Cancel</button>
                         <form action="{{ route('players.destroy', $player) }}" method="POST">
                             @csrf
                             @method('DELETE')

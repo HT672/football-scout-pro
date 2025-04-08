@@ -35,3 +35,52 @@ body {
     display: inline-block;
 }
 
+.crumbss a{
+    text-decoration: none;
+    color: linear-gradient(to right, #007bff, #6f42c1);
+
+}
+.crumbss a:hover{
+    border: none;
+    color: White;  
+}
+
+/* Style the checkbox container */
+.form-check-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* When the checkbox is checked */
+.form-check-input:checked {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+}
+
+/* Creating the purple checkmark */
+.form-check-input:checked::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    width: 6px;
+    height: 10px;
+    border-left: 3px solid white;
+    border-bottom: 3px solid white;
+    transform: rotate(45deg);
+}
+
+/* Checkbox focus effect */
+.form-check-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(111, 66, 193, 0.5);
+}
+/*88888888888888888888888888888888888888888888888888888888888888888888888888*/
+
