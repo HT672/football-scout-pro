@@ -7,6 +7,37 @@
 <!-- Link to the CSS file -->
 <link rel="stylesheet" href="{{ asset('css/HomeStyle.css') }}">
 
+<!-- Add this style section to fix player image sizing -->
+<style>
+    .player-card {
+        height: 100%;
+    }
+    
+    .player-row {
+        height: 100%;
+    }
+    
+    .player-image-col {
+        height: 100%;
+        padding: 0;
+    }
+    
+    .player-image-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+    }
+    
+    .player-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+    }
+</style>
+
 <div class="container">
     <!-- Hero Banner -->
     <div class="bg-primary text-white p-5 mb-4 rounded" style="background: linear-gradient(to top, #007bff, #6f42c1);">
@@ -34,16 +65,19 @@
                     <div class="row">
                         @forelse($topPlayers as $player)
                             <div class="col-md-4 mb-3">
-                                <div class="card h-100">
-                                    <div class="row g-0">
-                                        <div class="col-4">
-                                            @if($player->photo)
-                                                <img src="{{ asset('storage/' . $player->photo) }}" class="img-fluid rounded-start" alt="{{ $player->full_name }}">
-                                            @else
-                                                <div class="bg-secondary text-white d-flex align-items-center justify-content-center h-100 rounded-start">
-                                                    <i class="bi bi-person-fill" style="font-size: 3rem;"></i>
-                                                </div>
-                                            @endif
+                                <div class="card player-card">
+                                    <div class="row g-0 player-row">
+                                        <!-- Updated player image container for full height -->
+                                        <div class="col-4 player-image-col">
+                                            <div class="player-image-container">
+                                                @if($player->photo)
+                                                    <img src="{{ asset('storage/' . $player->photo) }}" class="player-image" alt="{{ $player->full_name }}">
+                                                @else
+                                                    <div class="bg-secondary text-white d-flex align-items-center justify-content-center h-100 w-100">
+                                                        <i class="bi bi-person-fill" style="font-size: 3rem;"></i>
+                                                    </div>
+                                                @endif
+                                            </div>
                                         </div>
                                         <div class="col-8">
                                             <div class="card-body">

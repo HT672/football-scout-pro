@@ -39,6 +39,6 @@ class Stat extends Model
 
     public function match()
     {
-        return $this->belongsTo(FootballMatch::class);
+        return $this->belongsTo(FootballMatch::class, 'match_id');
     }
 }

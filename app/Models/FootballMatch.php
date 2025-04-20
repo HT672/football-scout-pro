@@ -9,6 +9,8 @@ class FootballMatch extends Model
 {
     use HasFactory;
 
+    protected $table = 'football_matches';
+
     protected $fillable = [
         'home_team_id',
         'away_team_id',
@@ -38,12 +40,12 @@ class FootballMatch extends Model
 
     public function events()
     {
-        return $this->hasMany(MatchEvent::class);
+        return $this->hasMany(MatchEvent::class, 'match_id');
     }
 
     public function stats()
     {
-        return $this->hasMany(Stat::class);
+        return $this->hasMany(Stat::class, 'match_id');
     }
 
     public function getScoreAttribute()

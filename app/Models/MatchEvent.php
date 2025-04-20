@@ -19,7 +19,7 @@ class MatchEvent extends Model
 
     public function match()
     {
-        return $this->belongsTo(FootballMatch::class);
+        return $this->belongsTo(FootballMatch::class, 'match_id');
     }
 
     public function player()

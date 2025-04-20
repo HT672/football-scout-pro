@@ -11967,3 +11967,19 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+.player-card-image-container {
+  width: 180px;
+  height: 240px;
+  overflow: hidden;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.player-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+

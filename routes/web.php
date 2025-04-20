@@ -39,3 +39,8 @@ Auth::routes();
 
 // Dashboard (protected routes)
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/admin/all-matches', function() {
+    $matches = App\Models\FootballMatch::with(['homeTeam', 'awayTeam'])->get();
+    return view('admin.all-matches', compact('matches'));
+})->middleware(['auth', 'check.scout.role']);
